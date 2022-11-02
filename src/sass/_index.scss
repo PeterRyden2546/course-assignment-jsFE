@@ -1,4 +1,8 @@
 @use '../../node_modules/bootstrap/scss/bootstrap.scss';
+*{
+    font-family: 'Times New Roman', Times, serif;
+    padding: 0%;
+}
 h1, h2{
     font-family:cursive;
     font-style: italic;
@@ -6,14 +10,66 @@ h1, h2{
     color: rgb(221, 226, 230);
 }
 h1{
-    font-size: 10rem;
+    font-size: 10vw;
 }
 h2{
-    font-size: 7rem;
+    font-size: 7vw;
+}
+h5{
+    font-family:cursive;
+    font-style: italic;
+    font-weight: bold;
 }
 header{
     text-align: center;
 }
 body{
     background-color: rgb(31, 31, 31);
+}
+.nav-link{
+    color: rgb(221, 226, 230);
+    font-size: larger;
+}
+
+.card{
+   padding: 1rem;
+   min-height: 110vh;
+}
+.nav-link{
+    font-size: x-large;
+}
+.nav-link:visited{
+    color: rgb(117, 239, 255);
+}
+.nav-link:hover{
+    color: blueviolet;
+}
+.card-link{
+    text-decoration: none;
+    padding: 3%;
+    background-color: rgb(31, 31, 31);
+    border-radius: 15%;
+    color: rgb(221, 226, 230);    
+}
+.btn{
+    text-decoration: none;
+    padding: 3%;
+    background-color: rgb(31, 31, 31);
+    border-radius: 15%;
+    color: rgb(221, 226, 230);   
+}
+.card-link:hover{
+    color: blueviolet;
+}
+.card-body{
+    margin-top: 1rem;
+}
+.paddning-card{
+    padding: 1rem;
+}
+.list-group-item{
+    font-size: x-large;
+}
+.button-paddning{
+    padding-top: 1rem;
 }
