@@ -1,0 +1,19 @@
+@use '../../node_modules/bootstrap/scss/bootstrap.scss';
+h1, h2{
+    font-family:cursive;
+    font-style: italic;
+    font-weight: bold;
+    color: rgb(221, 226, 230);
+}
+h1{
+    font-size: 10rem;
+}
+h2{
+    font-size: 7rem;
+}
+header{
+    text-align: center;
+}
+body{
+    background-color: rgb(31, 31, 31);
+}
