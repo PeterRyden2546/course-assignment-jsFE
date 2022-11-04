@@ -28,15 +28,12 @@ body{
 }
 .nav-link{
     color: rgb(221, 226, 230);
-    font-size: larger;
+    font-size: x-large;
 }
 
 .card{
    padding: 1rem;
-   min-height: 110vh;
-}
-.nav-link{
-    font-size: x-large;
+   min-height: 120vh;
 }
 .nav-link:visited{
     color: rgb(117, 239, 255);
@@ -72,4 +69,16 @@ body{
 }
 .button-paddning{
     padding-top: 1rem;
+}
+.moreInfo{
+    display: none;
+}
+.updatedTime{
+    display: none;
+}
+.clearAllComment{
+    background-color: rgb(221, 226, 230);
+    color: rgb(31, 31, 31);
+    font-size: x-large;
+    margin: 1rem;
 }
