@@ -13,22 +13,21 @@
         <h1>New York Times</h1>
         <h2>Top Stories</h2>
     </header>
-    <nav class="navbar navbar-expand-lg">
-        <ul class="navbar-nav mb-2 mb-lg-0">
+    <nav class="navbar navbar-expand-lg" id="nav">
+        <ul class="navbar-nav mb-2 mb-lg-0" id="navbar-nav">
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">                  Article to read
+                <a class="nav-link dropdown-toggle" id="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">                  Article to read
                 </a>
-                <ul class="dropdown-menu">
+                <ul class="dropdown-menu" id="dropdown-menu">
+                    <button type="submit" class="btn btn-secondary clearAllArticle" id="clearAllArticle">clear All</button>
                 </ul>
             </li>
         </ul>
     </nav>
     <div id="container"></div>
-    <div>
-        <article id="articelComment"></article>
-        <button type="button" class="btn btn-secondary clearAllComment" id="clearAllComment">clear</button>
-    </div>
     <script type="module" src="js/script.js"></script>
     <script type="module" src="js/modal.js"></script>
+    <script type="module" src="js/localstorage.js"></script>
+    <script type="module" src="js/remove.js"></script>
 </body>
 </html>

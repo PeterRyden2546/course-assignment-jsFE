@@ -19,15 +19,19 @@ let data = fetch(urlApi)
   .then(data => {
     data.results.forEach(element => {
       id++
+      //Om elment.multimedia saknar på något ställe så lägg en bild på den plats som visar på sida
     if(element.multimedia == null){
-   element.multimedia = [{url: 'https://upload.wikimedia.org/wikipedia/commons/2/26/512pxIcon-sunset_photo_not_found.png'}]; 
+   element.multimedia = [{url: 'https://upload.wikimedia.org/wikipedia/commons/2/26/512pxIcon-sunset_photo_not_found.png'}
+                        ,{url: 'https://upload.wikimedia.org/wikipedia/commons/2/26/512pxIcon-sunset_photo_not_found.png'}
+                        ,{url: 'https://upload.wikimedia.org/wikipedia/commons/2/26/512pxIcon-sunset_photo_not_found.png'}]; 
  }
+ //default for headline on webbpage
  if(element.title == ""){
   element.title = "Headline is comming soon!"; 
 }
- //console.log(element);
+//get element for api to put on webbpage
  title = element.title;
- img = element.multimedia[0].url;
+ img = element.multimedia[2].url;
  section = element.section;
  subsection = element.subsection;
  publishedTime = element.published_date;
@@ -35,6 +39,8 @@ let data = fetch(urlApi)
  articleUrl = element.url;
  moreInfo = element.abstract;
  reporter = element.byline;
+
+//Havning 2 if/else to build flexbox for webbpage
 
 if(cuonter === 0){
 
@@ -57,7 +63,7 @@ if(cuonter === 0){
     <a href="${articleUrl}" class="card-link btn">Read now</a>
   </div>
   <div class="button-paddning">
-    <button class="btn" id="btn${id}">more info</button>
+    <button class="btn btnMore" id="btn${id}">more info</button>
   </div>
   <div class="moreInfo">${moreInfo}</div>
     <div class="updatedTime">${updatedTime}</div>
@@ -87,7 +93,7 @@ else{
     <a href="${articleUrl}" class="card-link btn">Read now</a>
   </div>
   <div class="button-paddning">
-    <button class="btn" id="btn${id}">more info</button>
+    <button class="btn btnMore" id="btn${id}">more info</button>
   </div>
   <div class="moreInfo">${moreInfo}</div>
     <div class="updatedTime">${updatedTime}</div>
@@ -118,7 +124,7 @@ else{
       <a href="${articleUrl}" class="card-link btn">Read now</a>
     </div>
     <div class="button-paddning">
-      <button class="btn" id="btn${id}">more info</button>
+      <button class="btn btnMore" id="btn${id}">more info</button>
     </div>
     <div class="moreInfo">${moreInfo}</div>
     <div class="updatedTime">${updatedTime}</div>

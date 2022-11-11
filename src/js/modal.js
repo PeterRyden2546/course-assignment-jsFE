@@ -1,6 +1,6 @@
 "use strict"
-//console.log(data);
-let btn1;
+let btn;
+let id = 0;
 let showModal;
 let modalWrap;
 let title;
@@ -12,9 +12,10 @@ let articleUrl;
 let reporter;
 let moreInfo;
 let updatedTime;
+
 let observer = new MutationObserver(entries => {
 
-    if(document.getElementsByClassName('btn')
+    if(document.getElementsByClassName('btnMore')
         ,document.getElementsByClassName('card-title')
         ,document.getElementsByClassName('card-img-top')
         ,document.getElementsByClassName('item2')
@@ -27,7 +28,7 @@ let observer = new MutationObserver(entries => {
         {
         moreInfo = document.getElementsByClassName('moreInfo');
         updatedTime = document.getElementsByClassName('updatedTime');
-        btn1 = document.getElementsByClassName('btn');
+        btn = document.getElementsByClassName('btnMore');
         title = document.getElementsByClassName('card-title');
         img = document.getElementsByClassName('card-img-top');
         section  = document.getElementsByClassName('item2');
@@ -35,13 +36,11 @@ let observer = new MutationObserver(entries => {
         publishedTime = document.getElementsByClassName('item4');
         articleUrl = document.getElementsByClassName('card-link');
         reporter = document.getElementsByClassName('item1');
-
-        console.log(articleUrl[5].href);
-
         observer.disconnect();
 
     for(let i = 0; i < entries.length; i++){
-        btn1[i].addEventListener('click', showModal = ()=>{
+        btn[i].addEventListener('click', showModal = ()=>{
+          id++;
             modalWrap = document.createElement('div');
             modalWrap.innerHTML = `<div class="modal" tabindex="-1">
             <div class="modal-dialog">
@@ -63,24 +62,15 @@ let observer = new MutationObserver(entries => {
                     <li class="list-group-item item4">${updatedTime[i].innerHTML}</li>
               </ul>
                 </div>
-                <div>
-                    <form>
-                        <label for="comment" class="headlineForm">${title[i].innerHTML}</label><br><br>
-                        <input type="text" id="comment" name="haedline" value=><br><br>
-                        <textarea id="fname" name="fname" rows="10" cols="40" value=></textarea>
-                    </form>
-                </div>
-                </div>
                 <div class="modal-footer button-paddning">
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">Post comment</button>
-                  <button type="button" class="btn btn-primary">Article to read later</button>
+                  <button type="button" class="btn btn-primary readButton">Article to read later</button>
                   <a href="${articleUrl[i].href}" class="card-link btn btn-primary">Read now</a>
                 </div>
               </div>
             </div>
           </div>`;
-          document.body.append(modalWrap);
+          document.getElementById("container").appendChild(modalWrap);
         
           const modal = new bootstrap.Modal(modalWrap.querySelector('.modal'))
           modal.show();
@@ -88,6 +78,4 @@ let observer = new MutationObserver(entries => {
     }
     }
 })
-
-
 observer.observe(container, {attributes: true, childList: true, subtree: true })
