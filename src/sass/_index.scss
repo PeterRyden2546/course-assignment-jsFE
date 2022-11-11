@@ -82,3 +82,22 @@ body{
     font-size: x-large;
     margin: 1rem;
 }
+.submitComment{
+    background-color: rgb(221, 226, 230);
+    color: rgb(31, 31, 31);
+    font-size: x-large;
+    margin: 1rem;
+}
+.clearAllComment:hover{
+    background-color: red;
+}
+.clearAllArticle:hover{
+    background-color: red;
+}
+form{
+    margin-right: 10rem;
+    margin-left: 1rem;
+}
+.headlineForm{
+    color: rgb(221, 226, 230);
+}
